@@ -42,8 +42,8 @@ function renderStuff(){
   <td>${data.name}</td>
   <td>${data.desc}</td>
   <td>${data.category}</td>
-  <td><button id="addItem">Add</button>
-  <button id="deleteItem">Delete</button>
+  <td><button id="addItem" class="btn">Add</button>
+  <button id="deleteItem" class="btn">Delete</button>
   </td>
 </tr>`
 

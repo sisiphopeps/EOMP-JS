@@ -4,3 +4,9 @@ body {
    font-family: 'Cormorant', serif;
    font-weight: bolder;
 }
+
+.btn {
+   background-color:purple;
+   color: white;
+
+}
