@@ -65,6 +65,8 @@ products.forEach((data) => {
 </div>`;
 });
 
+localStorage.setItem('data',JSON.stringify(products))
+
 const cart = [];
 localStorage.setItem('checkout-list', JSON.stringify( []))
 function addToCart(productId) {

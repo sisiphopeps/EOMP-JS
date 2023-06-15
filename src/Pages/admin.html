@@ -30,22 +30,31 @@
       </header>
 
     <main>
-<input type="text" id="title-name" placeholder="Product name">
-<input type="text" id="description" placeholder="Description">
-<input type="text" id="content" placeholder="Content">
+      <div class="container-fluid d-flex justify-content-between flex-column">
+
+      
+      <button class="btn-sort">Sort Products</button>
+<input type="text" id="product-name" placeholder="Product name">
+<input type="text" id="desc" placeholder="Description">
+<input type="text" id="content" placeholder="Category">
 <input type="text" id="image-url" placeholder="Image URL">
-<button class="btn-add" style="background-color: purple;">Add Product</button>
+<input type="text" id="finalPrice" placeholder="Price">
+<button class="btn-add" onclick="addToCart()" style="background-color: purple;">Add Product</button> 
 <table id="tbl-admin">
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Description(Price)</th>
+      <th>Category</th>
       <th>Actions</th>
     </tr>
+   
+    
   </thead>
   <tbody id="product-list"></tbody>
 </table>
+</div>
 </main>
 
   <!-- Footer -->
