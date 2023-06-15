@@ -1,12 +1,14 @@
-.info-container{
-    border: 1px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+
+body {
+   font-family: 'Cormorant', serif;
+   font-weight: bolder;
+}
+.btn-add-to-cart{
+    background-color:purple;
 }
 
+#atc {
+    background-color:purple;
+}
 
-.product-img{
-height: 186px !important;
-width: 100%;
-padding: 5px;
-border-radius: 10% !important;
-/* object-fit: scale-down !important; */
-} 
