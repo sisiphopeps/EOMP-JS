@@ -1,7 +1,5 @@
 let all= document.querySelector('#all')
-let products = JSON.parse(localStorage.getItem("product-list")) ?
-JSON.parse(localStorage.getItem("product-list")) :
-localStorage.setItem('product-list', JSON.stringify(
+let products = 
  [
     { id: 1,
      image: "https://i.postimg.cc/YqLHRJwn/YSL-Laurent-Libre.png",
@@ -49,54 +47,28 @@ localStorage.setItem('product-list', JSON.stringify(
         price: "R1 290,00",
         desc: "The composition of the fragrance encompasses zesty citrus top notes of Bergamot & Lemon, a heart note of Rosemary captures the aromatic, woody & earthy accord and the sensual & spicy appeal.",
         category: "men",
-    },
+    }
     
-]))
+]
+
 
 products.forEach((data) => {
   all.innerHTML += `
-  <div class="card py-3" style="width: 18rem;">
+  <div class="card px-3 m-4 col-lg-3 col-md-3 col-4" style="width: 18rem;">
   <img src="${data.image}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">${data.name}</h5>
+    <h5 class="card-title"><b>${data.name}</b></h5>
+    <p class="card-text">${data.price}</p>
     <p class="card-text">${data.desc}</p>
-    <button class="btn btn-primary" id="atc" onclick="addToCart${data.id}">Add to cart</button>
+    <button class="btn btn-primary" id="atc" onclick="addToCart(${data.id})">Add to cart</button>
   </div>
 </div>`;
 });
 
 const cart = [];
 localStorage.setItem('checkout-list', JSON.stringify( []))
-
-
 function addToCart(productId) {
-  // const cartContainer = document.querySelector("cartContent");
-  const product = products.find((product) => product.id === productId);
-
-  if (product && product.quantity > 0) {
+  const product = products.find((product) => product.id == productId);
     cart.push(product);
     localStorage.setItem('checkout-list', JSON.stringify(cart));
-    updateCart();
-  }
 }
-
-function goToCheckoutPage() {
-  window.location.href = "checkout.html";
-}
-
-
-function updateCart() {
-    cart.forEach((product, index)=> {
-        const cartItem = document.createElement("div")
-        cartItem.innerHTML = `<span>${product.name}</span>
-        <span>${product.price}</span>
-        <button class="modalButtonClose" onclick="cartDel(${index})">
-        Remove
-      </button>
-        `
-        cartContent.appendChild(cartItem)
-        cart.push(cartItem);
-    }) 
-}
-
-  
