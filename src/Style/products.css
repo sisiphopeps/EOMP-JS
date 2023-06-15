@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,300&display=swap');
+
+body {
+   font-family: 'Cormorant', serif;
+   font-weight: bolder;
+}
+
 .info-container{
     border: 1px solid black;
 }
